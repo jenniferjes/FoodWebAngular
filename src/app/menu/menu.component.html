@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+
+
+
+<!-- <div  -->
+<div *ngFor="let i of foodItem | async" style="text-align: center;">
+  <mat-card class="example-card">
+
+
+
+    <mat-card-header>
+
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{i.foodName}}</mat-card-title>
+
+    </mat-card-header>
+    <img mat-card-image class="cart_img" src="{{i.foodImage}}" alt="Photo of pizza">
+    <mat-card-content>
+      <h5>
+        {{i.foodDesc}}
+      </h5>
+      <h6 style="font-size: 20px;">Price {{i.foodPrice}}</h6>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn"(click)="addToCart(i)" >Add to Cart</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

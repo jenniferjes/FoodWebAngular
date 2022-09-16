@@ -1,0 +1,47 @@
+
+    <div class="bg" style=" height: 700px;width: 100%; background-image: url('../assets/bgnew.jpg'); height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+    <h1>The Pizza </h1>
+    <!-- <h1 style="color:rgb(247, 253, 253);font-family: 'Brush Script MT', cursive;font-size: 350%;">Skip boring food and indulge in flavoursome Wraps, Meals and Bowls!</h1> -->
+<div class="p-3 mb-2 bg-transparent text-dark container" style="max-width: 500px;background-color: white;position: absolute; 
+margin-left: 850px;margin-top:200px;border-radius: 25px;">
+    <!-- <h2 style="text-align:center;font-weight: bold;font-style: italic;margin-left: 20px;">LOGIN </h2> -->
+
+    <form #loginform="ngForm" (ngSubmit)="loginUser()" style="margin-left:100px">
+
+        <small class="text-danger">{{msg}}</small>
+      <div class="form-group" >
+        <!-- <label for="email" style="font-weight: bold;font-style: italic;">Email:</label> -->
+        <input  style="width:250px" type="email" class="form-control" placeholder="Enter Email Id" name="email" [(ngModel)]="user.emailId" required #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched"
+        >
+        <div  *ngIf="email.errors && (email.invalid && email.touched)">
+        <!-- <small class="text-danger"  *ngIf= "email.errors.required">Email Id is rquired field</small>
+        <small class="text-danger"  *ngIf= "email.errors.pattern">Enter the valid Email Id </small> -->
+    </div>
+ </div>
+ <div class="form-group">
+
+    <!-- <label for="pwd" style="font-weight: bold;font-style: italic;">Password</label> -->
+
+   <input  style="margin-top: 20px;width:250px" type="password" [(ngModel)] = "user.password" class="form-control" #password ="ngModel"
+   placeholder="Enter Password" name="password" required 
+    
+   [class.is-invalid] = "password.invalid && password.touched">
+    
+ <!-- <small class="text-danger" [class.d-none] ="password.valid || password.untouched">Enter a correct password</small> -->
+ 
+    
+ </div>
+      <!-- <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div> -->
+      <button [disabled]="loginform.form.invalid" style="margin-top: 20px;" type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <br>
+   
+    <small style="font-weight:bold;font-size: 20px; margin-left: 120px;color:white"  [routerLink]="['/registration']">New User ? Register here</small> 
+  </div>
+</div>

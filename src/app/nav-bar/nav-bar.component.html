@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg" style="background-color: grey;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src='../assets/icon.png'></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+     
+          <br> <br>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: large;color:white"><i class="bi bi-person-circle"></i>Welcome {{loggedName}} !</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link button-1" routerLink="/menu">Menu</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+
+        
+           <button [routerLink]="['/cart']" type="button" style="margin-right: 15px;" class="btn  position-relative">
+        <!-- <i style="font-size:30px;" class="fas fa-cart-plus"></i>
+        <div style="font-size: 10px;" class="badge bg-danger">{{totalFoodItem}}</div> -->
+          <i class="fa fa-shopping-cart"   aria-hidden="true"></i>
+          <p>{{count}}</p>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              
+          
+            </span>
+          </button>
+          <button class="button-1" style="margin-left: 20px;" routerLink="/login">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>

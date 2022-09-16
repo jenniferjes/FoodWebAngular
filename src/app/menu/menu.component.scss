@@ -1,0 +1,20 @@
+.example-card {
+  float: left;
+  margin-left:20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  display: list-item;
+  max-width: 400px;
+  
+}
+.cart_img:hover{
+transition: 0.3s ease-in-out;
+transform: scale(1.1);
+}
+
+
+:host(.hide-navigation-item) {
+
+  display: none ;
+  
+  }
